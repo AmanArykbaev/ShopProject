@@ -18,7 +18,8 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('shop/', include('reishop.urls'))
+    path('shop/', include('reishop.urls')),
+    path('contact/', include('reishop.urls'))
     #re_path(r'^about/contact', views.contact),
     #re_path(r'^about', views.about),
     #path('news', views.index)
