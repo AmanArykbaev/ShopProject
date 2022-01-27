@@ -18,20 +18,19 @@
 	</script>
 </head>
 <body>
-
+<h1>{{titleInHtml}}</h1>
 <div class="container">
 	<h1>{{titleInHtml}}</h1>
 	<div class="row">
 		{% for i in items %}
-	</div>
 	<div class="card mb-3">
 		<div class="card-header">
 			Category: {{i.category}}
 		</div>
 		<div class="card-body">
 			<h5 class="card-title">{{i.cloth_name}}</h5>
-			<p class="card-text">{{i.cloth_brand}}</p>
-			<p class="card-size">{{i.cloth_size}}</p>
+			<p class="card-text">Brand: {{i.cloth_brand}}</p>
+			<p class="card-size">Size: {{i.cloth_size}}</p>
 			<a href="#" class="btn btn-primary">Go to next page</a>
 		</div>
 		<div class="card-footer text-muted">
@@ -39,8 +38,9 @@
 		</div>
 	</div>
 	{% endfor %}
+	</div>
 </div>
-</div>
+
 <hr>
 
 
