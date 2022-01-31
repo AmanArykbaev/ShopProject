@@ -1,0 +1,148 @@
+.faqsection{
+	font-size: 20px;
+	font-style: italic;
+	font-family: 'Lora', serif;
+}
+
+p#p1{
+	font-size: 20px;
+	font-style: italic;
+	font-family: 'Lora', serif;
+}
+p{
+	max-width: 100%;
+	font-family: 'Lora', serif;
+}
+.social-network > a{
+
+  width: 50px;
+  height: 40px;
+
+}
+
+
+
+label{
+	display: block;
+	margin: auto;
+	text-align: center;
+}
+
+input[type=text], select{
+	display: block;
+	margin: auto;
+  width: 15%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  resize: vertical
+}
+
+textarea {
+	display: block;
+	margin: auto;
+	width: 500px;
+	height: 250px;
+	padding: 12px;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ box-sizing: border-box;
+}
+
+input[type=submit] {
+	display: block;
+	margin: auto;
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+
+.box {
+  max-width: 400px;
+  border: 5px solid grey;
+  padding: 10px;
+  margin: auto;
+  background-color: #F4F2ED;
+  display: block;
+  font-family: 'Oooh Baby', cursive;
+}
+
+img{
+	display: inline-block;
+	height: 150px;
+ width: 27%;
+ margin-right: 45px;
+ margin-left: 40px;
+}
+
+.headerBox{
+	text-align: center;
+}
+
+
+.comment{
+	border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body{
+	background-color: #f2f2f2;
+}
+
+.video{
+	display: block;
+	margin: auto;
+}
+
+h1,h2,h3,h4 {
+	font-family: 'Lato', sans-serif;
+}
+
+
+h2{
+	text-align: center;
+}
+
+img.descritcont{
+	float: right;
+	margin: auto;
+}
+
+img.descritcont2{
+	float: left;
+	margin: auto;
+	padding-right: 10px;
+}
+
+p.descrit{
+	display: block;
+	max-width: 100%;
+	font-family: 'Lora', serif;
+
+}
+p.descrit2{
+	display: block;
+	max-width: 100%;
+	font-family: 'Lora', serif;
+
+}

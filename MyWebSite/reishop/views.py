@@ -1,19 +1,27 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
-# Create your views here.
-from .models import Clothes
+from .models import *
 
 
 def index(request):
     allItems = Clothes.objects.all()
-    # res = "<h1>All Shop Items</h1>"
+    categories = Category.objects.order_by('cloth_name')
+    content = {'items': allItems,
+               'titleInHtml': 'All Shop Items',
+               'categories': categories
+               }
+    return render(request, template_name="reishop/index.html", context=content)
 
-    # for item in allItems:
-    #     res += f'<h4>{item.cloth_name}</h4><br><p>{item.cloth_brand}</p>' \
-    #            f'<br><br><u>{item.cloth_date_release}</u><hr>'
 
-    return render(request, "reishop/index.html", {'items': allItems, 'titleInHtml': 'All Shop Items'})
+def get_category(request, category_id):
+    item = Clothes.objects.filter(category=category_id)
+    categories = Category.objects.order_by('cloth_name')
+    category = Category.objects.get(pk=category_id)
+    content = {'item': item,
+               'allCategories': categories,
+               'category': category
+               }
+    return render(request, "reishop/category.html", content)
 
 
 def about(request):
