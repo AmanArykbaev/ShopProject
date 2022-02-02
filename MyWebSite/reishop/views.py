@@ -5,7 +5,7 @@ from .models import *
 
 def index(request):
     allItems = Clothes.objects.all()
-    categories = Category.objects.order_by('cloth_name')
+    categories = Category.objects.all()
     content = {'items': allItems,
                'titleInHtml': 'All Shop Items',
                'categories': categories
