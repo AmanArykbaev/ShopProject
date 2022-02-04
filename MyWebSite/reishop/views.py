@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from .models import *
 from .forms import *
@@ -6,10 +6,8 @@ from .forms import *
 
 def index(request):
     allItems = Clothes.objects.all()
-    categories = Category.objects.all()
     content = {'items': allItems,
                'titleInHtml': 'All Shop Items',
-               'categories': categories
                }
     return render(request, template_name="reishop/index.html", context=content)
 
@@ -39,7 +37,11 @@ def view_clothes(request, collection_id):
 
 def add_cloth(request):
     if request.method == 'POST':
-        pass
+        form = ClothForm(request.POST)
+        if form.is_valid():
+            #print(form.cleaned_data)
+            Clothes.objects.create(**form.cleaned_data)
+            return redirect('home')
     else:
         form = ClothForm()
     return render(request, 'reishop/add_cloth.html', {"form": form})

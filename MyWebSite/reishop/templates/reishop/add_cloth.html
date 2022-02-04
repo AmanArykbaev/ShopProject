@@ -1,14 +1,6 @@
 {% extends 'Base.html' %}
 {% block sidebar %}
-<div class="col-md-4 mt-5">
-			<div class="list-group ">
-				{% for i in categories %}
-                   <a href="{{ i.get_absolute_url }}" class="list-group-item list-group-item-action" aria-current="true">
-                    {{ i.cloth_name }}
-                   {% endfor %}
-  				</a>
-			</div>
-</div>
+{% include '_sidebar.html' %}
 {% endblock %}
 
 {% block content %}
@@ -47,6 +39,14 @@
 				{{ form.is_published.error }}
 			</div>
 
+		</div>
+
+		<div class="form-group mb-3">
+			<label for="{{ form.photo.id.for_label }}" class="form-label">Photo</label>
+				{{ form.photo }}
+			<div class="invalid-feedback">
+					{{ form.photo.error }}
+			</div>
 		</div>
 
 		<div class="form-group mb-3">

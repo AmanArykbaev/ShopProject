@@ -1,19 +1,12 @@
 {% extends 'Base.html' %}
 {% block sidebar %}
-	<div class="list-group ">
-		{% include '_sidebar.html' %}
-	</div>
-
+{% include '_sidebar.html' %}
 {% endblock %}
-
 {% block content %}
-
 		{% for i in items reversed %}
 	<div class="card ">
 		<div class="card-header {% cycle 'text-success' 'text-danger' %}">
-			{{forloop.counter}}
 			Category: <a href="{{ i.category.get_absolute_url }}">{{ i.category }}</a>
-			{{ '11232132' | filesizeformat }}
 		</div>
 		<div class="card-body">
 			<div class="media">
@@ -34,6 +27,7 @@
 			<p>{{i.cloth_date_release|date:"Y:m-d H:i:s"}}</p>
 		</div>
 	</div>
+<hr>
 	{% endfor %}
 {% endblock %}
 

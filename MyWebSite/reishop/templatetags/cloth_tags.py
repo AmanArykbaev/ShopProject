@@ -1,6 +1,6 @@
 from django import template
 
-from MyWebSite.reishop.models import Category
+from reishop.models import Category
 
 register = template.Library()
 

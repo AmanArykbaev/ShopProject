@@ -1,14 +1,10 @@
 {% extends 'Base.html' %}
-{% block content %}
 {% block sidebar %}
 {% include '_sidebar.html' %}
 {% endblock %}
-<h1>{{titleInHtml}}</h1>
+{% block content %}
 <div class="container mt-3">
-	<h1>{{titleInHtml}}</h1>
-	Today: {% now "Y:m-d H:i:s" %}
 	<div class="row">
-
 		<div class="col-md-8">
 		{% for i in item %}
 	<div class="card mb-3">
