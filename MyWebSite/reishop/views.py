@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse
 from .models import *
+from .forms import *
 
 
 def index(request):
@@ -15,10 +16,8 @@ def index(request):
 
 def get_category(request, category_id):
     item = Clothes.objects.filter(category=category_id)
-    categories = Category.objects.order_by('cloth_name')
     category = Category.objects.get(pk=category_id)
     content = {'item': item,
-               'allCategories': categories,
                'category': category
                }
     return render(request, "reishop/category.html", content)
@@ -30,3 +29,17 @@ def about(request):
 
 def contact(request):
     return render(request, "reishop/contactus.html")
+
+
+def view_clothes(request, collection_id):
+    #collection_item = Clothes.objects.get(pk=collection_id)
+
+    collection_item = get_object_or_404(Clothes, pk=collection_id)
+    return render(request, "reishop/view_clothes.html", {'collection_item': collection_item})
+
+def add_cloth(request):
+    if request.method == 'POST':
+        pass
+    else:
+        form = ClothForm()
+    return render(request, 'reishop/add_cloth.html', {"form": form})

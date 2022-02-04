@@ -1,0 +1,51 @@
+{% extends 'Base.html' %}
+{% block title %}
+
+	{{collection.title}} :: {{block.super}}
+
+{% endblock %}
+{% block sidebar %}
+<div class="col-md-4 mt-5">
+
+			<div class="list-group ">
+
+				{% for i in categories %}
+
+                   <a href="{{ i.get_absolute_url }}" class="list-group-item list-group-item-action" aria-current="true">
+                    {{ i.cloth_name }}
+                   {% endfor %}
+  				</a>
+
+			</div>
+
+		</div>
+{% endblock %}
+
+{% block content %}
+<div class="col-md-8">
+	<div class="card mt-5">
+		<div class="card-header {% cycle 'text-success' 'text-danger' %}">
+			Category: <a href="{{ collection_item.category.get_absolute_url }}">{{ collection_item.category }}</a>
+		</div>
+		<div class="card-body">
+			<div class="media">
+				<div class="media-body">
+					{% if collection.photo %}
+					<img src="{{ collection_item.photo.url }}" width="300">
+					{% else %}
+					<img src="https://bitsofco.de/content/images/2018/12/broken-1.png" width="300">
+					{% endif %}
+			<h5 class="card-title">{{collection_item.cloth_name}}</h5>
+			<p class="card-text">Brand: {{collection_item.cloth_brand|linebreaks}}</p>
+			<p class="card-size">Size: {{collection_item.cloth_size}}</p>
+			<a href="#" class="btn btn-primary">Go to next page</a>
+				</div>
+				</div>
+		</div>
+		<div class="card-footer text-muted">
+			<p>{{collection_item.cloth_date_release|date:"Y:m-d H:i:s"}}</p>
+		</div>
+	</div>
+			</div>
+{% endblock %}
+

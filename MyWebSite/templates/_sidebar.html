@@ -1,0 +1,11 @@
+	{% load cloth_tags %}
+			<div class="list-group ">
+
+				{% categoryFind as categories %}
+
+				{% for i in categories %}
+                   <a href="{% url 'category' i.pk  %}" class="list-group-item list-group-item-action" aria-current="true">
+                    {{ i.cloth_name }}
+                   {% endfor %}
+  				</a>
+			</div>

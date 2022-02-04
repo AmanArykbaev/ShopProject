@@ -21,8 +21,12 @@
 {% include '_nav.html' %}
 <div class="container mt-3">
 	<div class="row">
-		{% block sidebar %}SIDEBAR{% endblock %}
+		<div class="col-md-4 mt-5">
+			{% block sidebar %}SIDEBAR{% endblock %}
+		</div>
+		<div class="col-md-8 mt-5">
 		{% block content %}CONTENT{% endblock %}
+		</div>
 	</div>
 </div>
 		<div class="card-footer text-muted">

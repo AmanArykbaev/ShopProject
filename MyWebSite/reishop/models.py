@@ -1,7 +1,9 @@
 from django.db import models
 
-
 # Create your models here.
+from django.urls import reverse
+
+
 class Clothes(models.Model):
     id = models.IntegerField(primary_key=True, verbose_name='Number')
     cloth_name = models.CharField(max_length=200, verbose_name='Title')
@@ -11,6 +13,9 @@ class Clothes(models.Model):
     photo = models.ImageField(upload_to='photos/%Y/%m/%d', default='')
     category = models.ForeignKey('Category', on_delete=models.PROTECT, null=True, verbose_name='Category')
     is_published = models.BooleanField(default=True, verbose_name='Published')
+
+    def get_absolute_url(self):
+        return reverse('view_clothes', kwargs={"collection_id": self.pk})
 
     def __str__(self):
         return self.cloth_name
@@ -23,6 +28,9 @@ class Clothes(models.Model):
 
 class Category(models.Model):
     cloth_name = models.CharField(max_length=150, db_index=True, verbose_name="Category")
+
+    def get_absolute_url(self):
+        return reverse('category', kwargs={"category_id": self.pk})
 
     def __str__(self):
         return self.cloth_name
