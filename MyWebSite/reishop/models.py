@@ -15,7 +15,7 @@ class Clothes(models.Model):
     is_published = models.BooleanField(default=True, verbose_name='Published')
 
     def get_absolute_url(self):
-        return reverse('view_clothes', kwargs={"collection_id": self.pk})
+        return reverse('view_clothes', kwargs={"pk": self.pk})
 
     def __str__(self):
         return self.cloth_name

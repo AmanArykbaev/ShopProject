@@ -1,0 +1,68 @@
+{% extends 'Base.html' %}
+{% block sidebar %}
+{% include '_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+
+<h1>Add clothes</h1>
+
+<form action="{% url 'add_cloth' %}" method="post">
+	{% csrf_token %}
+		{{ form.non_field.errors }}
+		<div class="form-group mb-3">
+			<label for="{{ form.cloth_name.id.for_label }}" class="form-label">Cloth Name</label>
+			{{ form.cloth_name }}
+
+			<div class="invalid-feedback">
+				{{ form.cloth_name.error }}
+			</div>
+
+		</div>
+
+
+		<div class="form-group mb-3">
+			<label for="{{ form.cloth_brand.id.for_label }}" class="form-label">Brand</label>
+			{{ form.cloth_brand }}
+
+			<div class="invalid-feedback">
+				{{ form.cloth_brand.error }}
+			</div>
+
+		</div>
+
+		<div class="form-group mb-3">
+			<label for="{{ form.is_published.id.for_label }}" class="form-label">Published</label>
+			{{ form.is_published }}
+
+			<div class="invalid-feedback">
+				{{ form.is_published.error }}
+			</div>
+
+		</div>
+
+		<div class="form-group mb-3">
+			<label for="{{ form.photo.id.for_label }}" class="form-label">Photo</label>
+				{{ form.photo }}
+			<div class="invalid-feedback">
+					{{ form.photo.error }}
+			</div>
+		</div>
+
+		<div class="form-group mb-3">
+			<label for="{{ form.category.id.for_label }}" class="form-label">category</label>
+			{{ form.category }}
+
+			<div class="invalid-feedback">
+				{{ form.category.error }}
+			</div>
+
+		</div>
+
+
+	<button type="submit" class="btn btn-primary btn-block">Add cloth</button>
+
+</form>
+
+{% endblock %}
+

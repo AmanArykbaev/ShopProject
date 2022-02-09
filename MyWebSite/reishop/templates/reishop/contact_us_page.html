@@ -1,0 +1,64 @@
+{% extends 'Base.html' %}
+{% block title %}
+{{ title }}
+{% endblock %}
+{% block sidebar %}
+<!--{% include '_sidebar.html' %} -->
+{% endblock %}
+{% block content %}
+
+      <div class="container mt-5">
+       <h1 style="text-align: center;">Contact us</h1>
+       <form action="/action_page.php">
+        <div class="mb-3">
+          <label class="form-label">First Name:</label>
+          <input class="form-control" placeholder="Enter name">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Last Name:</label>
+          <input class="form-control" placeholder="Enter Last Name">
+        </div>
+        <div class="mb-3 mt-3">
+          <label class="form-label">Email:</label>
+          <input class="form-control"placeholder="Enter email">
+        </div>
+        <label class="form-label">Phone:</label>
+
+        <div class="row">
+          <div class="col">
+            <select class="form-select">
+              <option>+1</option>
+              <option>+996</option>
+              <option>+7</option>
+            </select>
+          </div>
+          <div class="col">
+            <select class="form-select">
+              <option>America</option>
+              <option>Kyrgyzstan</option>
+              <option>Russia</option>
+            </select>
+          </div>
+
+          <div class="col">
+            <input class="form-control" placeholder="Enter phone">
+          </div>
+
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary d-flex justify-content-center m-3">Submit</button>
+      </form>
+    </div>
+
+    <div class="social-network m-3 d-flex justify-content-center">
+
+      <a href="https://www.facebook.com/REI" class="btn btn-outline-primary fa fa-facebook" id="facebook"></a>
+      <a href="https://twitter.com/rei" class="btn btn-outline-info fa fa-twitter" id="twitter"></a>
+      <a href="https://www.instagram.com/rei/" class="btn btn-outline-danger fa fa-instagram" id="instagram"></a>
+
+    </div>
+
+    <button class="btn btn-outline-info m-3 btn-sm" id="socialButtonHide">See Social Network</button>
+{% endblock %}
+
+
