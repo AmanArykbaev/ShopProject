@@ -4,8 +4,10 @@
 				{% categoryFind as categories %}
 
 				{% for i in categories %}
+
                    <a href="{% url 'category' i.pk  %}" class="list-group-item list-group-item-action" aria-current="true">
-                    {{ i.cloth_name }}
+                    {{ i.cloth_name }} <span class="badge bg-primary rounded-pill">{{ i.cnt }}</span>
                    {% endfor %}
   				</a>
+
 			</div>

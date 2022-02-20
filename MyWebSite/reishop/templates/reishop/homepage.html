@@ -6,6 +6,7 @@
 {% include '_sidebar.html' %}
 {% endblock %}
 {% block content %}
+{{ mixin_prop }}
 		{% for i in items reversed %}
 	<div class="card ">
 		<div class="card-header {% cycle 'text-success' 'text-danger' %}">

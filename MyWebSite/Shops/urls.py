@@ -21,11 +21,16 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('reishop.urls'))
-    #re_path(r'^about/contact', views.contact),
-    #re_path(r'^about', views.about),
-    #path('news', views.index)
+    # re_path(r'^about/contact', views.contact),
+    # re_path(r'^about', views.about),
+    # path('news', views.index)
 
 ]
 if settings.DEBUG:
-    urlpatterns+= (static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) +
-                  static(settings.STATIC_URL, document_root=settings.STATIC_ROOT))
+    from django.urls import include, path
+
+    urlpatterns = [
+        path('__debug__/', include('debug_toolbar.urls')),
+    ] + urlpatterns
+    urlpatterns += (static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) +
+                    static(settings.STATIC_URL, document_root=settings.STATIC_ROOT))
