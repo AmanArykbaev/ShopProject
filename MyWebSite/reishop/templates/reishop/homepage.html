@@ -7,6 +7,7 @@
 {% endblock %}
 {% block content %}
 {{ mixin_prop }}
+
 		{% for i in items reversed %}
 	<div class="card ">
 		<div class="card-header {% cycle 'text-success' 'text-danger' %}">
@@ -33,5 +34,7 @@
 	</div>
 <hr>
 	{% endfor %}
+
 {% endblock %}
+
 

@@ -38,7 +38,8 @@ def user_login(request):
             return redirect('home')
     else:
         form = UserLoginForm()
-    return render(request, 'reishop/login.html', {"form":form})
+    return render(request, 'reishop/login.html', {"form": form})
+
 
 def user_logout(request):
     logout(request)
@@ -58,7 +59,7 @@ def test(request):
                 messages.error(request, 'Something went wrong. Could not send email. Try again!')
 
         else:
-            messages.error(request, 'Registration went wrong! Try again!')
+            messages.error(request, 'Error to send message! Try again!')
     else:
         form = ContactForm()
 

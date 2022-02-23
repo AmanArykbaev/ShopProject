@@ -2,6 +2,7 @@ from django import forms
 from .models import *
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
+from captcha.fields import CaptchaField, CaptchaTextInput
 
 
 class ContactForm(forms.Form):
@@ -15,6 +16,7 @@ class ContactForm(forms.Form):
                                       widget=forms.Select(), required=False)
     content = forms.CharField(label='Your question', widget=forms.Textarea(
         attrs={"class": "form-control", "rows": 10}))
+    captcha = CaptchaField()
 
 
 class UserLoginForm(AuthenticationForm):
