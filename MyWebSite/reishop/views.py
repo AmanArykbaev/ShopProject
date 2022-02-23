@@ -38,7 +38,8 @@ def user_login(request):
             return redirect('home')
     else:
         form = UserLoginForm()
-    return render(request, 'reishop/login.html', {"form":form})
+    return render(request, 'reishop/login.html', {"form": form})
+
 
 def user_logout(request):
     logout(request)
