@@ -20,7 +20,6 @@
 				<a class="nav-link text-white" href="{% url 'add_cloth' %}">Add new cloth</a>
 			</li>
 			{% endif %}
-
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">Adventure</a>
 				<ul class="dropdown-menu bg-dark text-center" >
@@ -30,7 +29,11 @@
 				</ul>
 		</ul>
 		<span class="navbar-text">
+			{% if request.user.is_authenticated %}
+        Welcome, {{ user.username }} | <a href="{% url 'logout' %}"> Logout </a>
+        {% else %}
         <a href="{% url 'register' %}">Sign Up</a> | <a href="{% url 'login' %}">Sign in</a>
+			 {% endif %}
       </span>
 <!--      <form class="d-flex">-->
 <!--        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">-->
